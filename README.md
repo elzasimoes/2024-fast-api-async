@@ -158,3 +158,38 @@ def f(name: str):
 ## Pydantic
 
 - [Documentação do Pydantic](https://docs.pydantic.dev/latest/)
+
+- Utilizar Pydantic para trabalhar com dados
+
+- Pydentic Overview;
+
+    - Substitui o nível de dicionário a nível de classe e objetos;
+    - Utilizar o BaseModel;
+    - Instanciar a Classe
+    - Validação dos dados
+    - Validações costumizadas com decorator @validator
+
+```python
+
+# user = {
+#     "name": "João",
+#     "age: "23",
+#     "email": "teste@gmail.com"
+# }
+
+from pydantic import BaseModel, validator 
+
+class User(BaseModel):
+    name: str,
+    age: int,
+    email: str
+
+    @validator('email')
+    def validate_email(cls, value):
+        if '@' not in email:
+            raise ValueError('Invalid Email')
+        return value
+
+user = user(name="João", age=23, email="teste@gmail.com")
+
+```
