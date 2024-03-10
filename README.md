@@ -6,6 +6,8 @@ Este repositório oferece uma solução eficaz para a implementação de APIs s�
 
 ## Documentação do projeto
 
+- [github.io/2024-fast-api-async](https://elzasimoes.github.io/2024-fast-api-async/) 
+
 1. docs/1. Preparação de Ambiente
 2. docs/2. Conceitos Introdutórios
 3. docs/3. Projeto
