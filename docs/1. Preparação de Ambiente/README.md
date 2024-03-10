@@ -1,54 +1,53 @@
-- TDD (Test Driven Development)
-- Async/await em detalhes
-- Docker e dockerização de aplicação
-- Utilizar path, query e body parameter
-- Segurança e Autenticação em FastAPI
-- Trabalhar com validações avançadas
-- Testes unitários com Pytest
-- Trabalhar com Pydantic
-- Trabalhar com PostgreSQL
-- Fazer CRUD com SQLAlchemy
-- Migrations com alembic
-- Integração com API externa
+# Iniciando a preparação de ambiente
 
+## Instalação do WSL para configuração do ambiente de desenvolvimento Linux
 
-## Instalação do WLS para configuração de Ambiente de Desenvolvimento
-
-- No Powershell em modo de administrador digite o seguinte comando:
+- No Powershell em modo de administrador digite o seguinte comando para instalação do WSL:
 
 ```bash
   wsl -- install
 ```
 
-## Guia de Instalação do WLS
+## Guia de Instalação do WSL
 
 - [Documentação do Subsistema Windows para Linux](https://learn.microsoft.com/pt-br/windows/wsl/) 
 - [Como instalar o Linux no Windows com o WSL](https://learn.microsoft.com/pt-br/windows/wsl/install)  
 
-- Configurar Ubuntu como padrão
+- Em seguida envie o seguinte comando para configurar Ubuntu como distro padrão:
 
 ```bash
   wsl --set-default Ubuntu
 ```
 
-## Instalação do Pyenv na WLS
+## Utilização do Vim para configuração dos path de ambiente na WSL
+
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get vim
+```
+
+ - [Comandos Básicos VIM](https://openwebinars.net/blog/vim-manual-de-uso-basico/)
+
+## Instalação do Pyenv na WLS (Similar ao virtualenv):
 
 - Comandos de configuração do Pyenv
 
-1. Garanta que todas dependências necessárias estão instaladas
+- Garanta que todas dependências necessárias estão instaladas
 
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
-2. Baixe e execute o script de instalação
+- Baixe e execute o script de instalação
 
 ```bash
 curl https://pyenv.run | bash
 ```
 
-3. Adicione o seguinte script no arquivo ~/.bashrc
+- Adicione o seguinte script no arquivo ~/.bashrc
 
 ```bash
 vim ~/.bashrc
@@ -61,19 +60,7 @@ eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-## Utilização do Vim para configuração dos path de ambiente na WLS
-
-```bash
-sudo apt-get update
-```
-```bash
-sudo apt-get vim
-```
-
- - [Comandos Básicos VIM](https://openwebinars.net/blog/vim-manual-de-uso-basico/)
-
-
-### Instalação do Poetry na WLS
+## Instalação do Poetry na WLS
 
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
@@ -101,7 +88,7 @@ export PATH="$HOME/.local/bin:$PATH
 docker ps
 ```
 
-## Configuração do VSCODE
+## Configuração do Vscode
 
 - Download Plugin WLS Version: 0.86.0
 
@@ -145,51 +132,18 @@ poetry shell
 poetry add pydantic
 ```
 
-# Type Hint
+- Verificar onde está o ambiente virtual
 
-- Notations - Caracteristica Fast API
-
-```python
-def f(name: str):
-    pass
+```bash
+poetry env info -p
 ```
 
-
-## Pydantic
-
-- [Documentação do Pydantic](https://docs.pydantic.dev/latest/)
-
-- Utilizar Pydantic para trabalhar com dados
-
-- Pydentic Overview;
-
-    - Substitui o nível de dicionário a nível de classe e objetos;
-    - Utilizar o BaseModel;
-    - Instanciar a Classe
-    - Validação dos dados
-    - Validações costumizadas com decorator @validator
-
-```python
-
-# user = {
-#     "name": "João",
-#     "age: "23",
-#     "email": "teste@gmail.com"
-# }
-
-from pydantic import BaseModel, validator 
-
-class User(BaseModel):
-    name: str,
-    age: int,
-    email: str
-
-    @validator('email')
-    def validate_email(cls, value):
-        if '@' not in email:
-            raise ValueError('Invalid Email')
-        return value
-
-user = user(name="João", age=23, email="teste@gmail.com")
-
+```output
+/home/elza/.cache/pypoetry/virtualenvs/introduction-1CFmuCEW-py3.10\bin\python
 ```
+
+- CTRL + Shift + P > Select Interpreter > Path para entrar no ambiente virtual
+
+
+
+
