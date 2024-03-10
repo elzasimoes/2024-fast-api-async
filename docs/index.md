@@ -1,12 +1,7 @@
-- TDD (Test Driven Development)
+Este repositório oferece uma solução eficaz para a implementação de APIs síncronas utilizando FastAPI e aiohttp em Python. Juntamente com Pydantic para validação de dados e outras ferramentas como Poetry, MkDocs, Taskipy, Black e Isort, uma base sólida para o desenvolvimento de APIs robustas.
+
 - Async/await em detalhes
-- Docker e dockerização de aplicação
-- Utilizar path, query e body parameter
-- Segurança e Autenticação em FastAPI
+- Utilizar path, query e body parameterPI
 - Trabalhar com validações avançadas
-- Testes unitários com Pytest
 - Trabalhar com Pydantic
-- Trabalhar com PostgreSQL
-- Fazer CRUD com SQLAlchemy
-- Migrations com alembic
 - Integração com API externa
