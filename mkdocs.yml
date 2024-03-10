@@ -1,6 +1,6 @@
 site_name: FastAPI | 2 Projetos | TDD | Docker
-repo_url: https://github.com/elzasimoes/fast-api-docker
-repo_name: elzasimoes/fast-api-docker
+repo_url: https://github.com/elzasimoes/2024-fast-api-async
+repo_name: elzasimoes/2024-fast-api-async
 
 theme:
   name: "material"
